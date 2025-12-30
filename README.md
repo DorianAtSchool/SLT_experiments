@@ -16,7 +16,7 @@ The main experiment explores the impact of curriculum learning versus direct tra
 - **Goal:** Compare curriculum learning (progressively harder modular addition tasks) with direct training on the hardest task, analyzing LLC trajectories and grokking.
 - **Notebook:** All code and analysis are in `devinterp/examples/curriculum_grokking_llc.ipynb`.
 - **Reference:** Based on the original grokking experiment from [devinterp](https://github.com/timaeus-research/devinterp/blob/main/examples/grokking.ipynb).
-- **Observations** It seems that curriculum learning can significanly decrease the number of steps to start grokking, and can accelerate grokking, when applied to a final modulus task that a model is known to have the capacity to grokk on. However, grokking doesnt seem to ever take place for many numbers or when modifiying seed and weight decay parameters in direct training or curriculum learning, and it is unclear whether curriculum learning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning encourages memorization vs. grokking, and further tune the conditions neccessary for grokking.
+- **Future Directions** It is unclear whether curriculum learning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning encourages memorization vs. grokking, and further tune the conditions neccessary for grokking.
 
 ## Experiment Design
 - **Curriculum Learning:**
@@ -48,9 +48,10 @@ The main experiment explores the impact of curriculum learning versus direct tra
    - LLC estimation
    - Plotting and analysis
 
-## Results
+## Observations / Results
+It seems that curriculum learning can significanly decrease the number of steps to start grokking, and can accelerate grokking, when applied to a final modulus task that a model is known to have the capacity to grokk on. However, grokking doesnt seem to ever take place for many numbers or when modifiying seed and weight decay parameters in direct training or curriculum learning, and it is unclear whether curriculum learning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training.
+
 - The notebook produces plots comparing curriculum and direct training in terms of accuracy, loss, and LLC.
-- LLC trajectories reveal how model complexity evolves under different training regimes.
 
 ## Files
 - `devinterp/examples/curriculum_grokking_llc.ipynb`: Main experiment notebook
