@@ -1,8 +1,8 @@
 # Introduction
 
-This repo contains my first experiments with Singular Learning Theroy, Local Learning Coefficient (LLC), grokking, and developmental interpretability. 
+This repo contains my first experiments with Singular Learning Theory, Local Learning Coefficient (LLC), grokking, and developmental interpretability. 
 
-The main experiment is in /curriculum_learning and is described in detail below. It is still a work in progress but some interesting observations can already be seen. I aim to conduct more robust experiments in order to make more definitive conclusions and synthesize obsevrations into a blog post.
+The main experiment is in /main_experiment and is described in detail below. It is still a work in progress but some interesting observations can already be seen. I aim to conduct more robust experiments in order to make more definitive conclusions and synthesize observations into a blog post.
 
 The rest of the repo contains other extra experiments (some work, some don't) reproducing existing papers from scratch (using PyTorch).
 
@@ -16,7 +16,7 @@ The main experiment explores the impact of curriculum learning versus direct tra
 
 ## Overview
 - **Goal:** Compare three approaches—curriculum learning (progressively harder modular addition tasks), finetuning (sequential training on unrelated moduli), and direct training on the hardest task—analyzing LLC trajectories and grokking.
-- **Notebook:** All code and analysis are in `devinterp/examples/curriculum_grokking_llc.ipynb`.
+- **Notebook:** All code and analysis are in `main_experiemtn/curriculum_grokking_llc.ipynb`.
 - **Reference:** Based on the original grokking experiment from [devinterp](https://github.com/timaeus-research/devinterp/blob/main/examples/grokking.ipynb).
 - **Future Directions:** It is unclear whether curriculum learning or finetuning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning or finetuning encourages memorization vs. grokking, and further tune the conditions necessary for grokking.
 
@@ -71,12 +71,12 @@ It seems that both curriculum learning and fine-tuning can significantly decreas
 - The notebook produces plots comparing curriculum, finetuning, and direct training in terms of accuracy, loss, and LLC.
 
 ## Files
-- `devinterp/examples/curriculum_grokking_llc.ipynb`: Main experiment notebook
-- `requirements.txt`: (if present) lists dependencies
+- `main_experiment/curriculum_grokking_llc.ipynb`: Main experiment notebook
+- `requirements.txt`: lists dependencies
 
 ## References
 - [devinterp GitHub](https://github.com/timaeus-research/devinterp)
-- Original grokking experiment: `examples/grokking.ipynb` in devinterp
+- Original grokking experiment: `devinterp/examples/grokking.ipynb`
 
 ## Contact
 For questions or contributions, see the devinterp repository or open an issue.
