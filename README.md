@@ -6,7 +6,7 @@ The main experiment is in /curriculum_learning and is described in detail below.
 
 The rest of the repo contains other extra experiments (some work, some don't) reproducing existing papers from scratch (using PyTorch).
 
-The long-term vision of the repo is to conduct novel experiments and form conclusive insights, however the short-term goal is simply to familiarize myself with developmental interpretability through novel but simple short experiments.
+The long-term vision of the repo is to conduct novel experiments and form conclusive insights, however the short-term goal is simply to familiarize myself with developmental interpretability through novel but simple experiments.
 
 # Curriculum Learning and LLC in Grokking
 
