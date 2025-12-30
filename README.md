@@ -16,7 +16,7 @@ The main experiment explores the impact of curriculum learning versus direct tra
 
 ## Overview
 - **Goal:** Compare three approaches—curriculum learning (progressively harder modular addition tasks), finetuning (sequential training on unrelated moduli), and direct training on the hardest task—analyzing LLC trajectories and grokking.
-- **Notebook:** All code and analysis are in `main_experiemtn/curriculum_grokking_llc.ipynb`.
+- **Notebook:** All code and analysis are in `main_experiment/curriculum_grokking_llc.ipynb`.
 - **Reference:** Based on the original grokking experiment from [devinterp](https://github.com/timaeus-research/devinterp/blob/main/examples/grokking.ipynb).
 - **Future Directions:** It is unclear whether curriculum learning or finetuning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning or finetuning encourages memorization vs. grokking, and further tune the conditions necessary for grokking.
 
