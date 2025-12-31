@@ -78,9 +78,15 @@ The curriculum learning approach shows accelerated grokking compared to direct t
 
 ### Finetuning vs Direct Training
 
-![Finetuning vs Direct Training: Accuracy](results/finetuning/finetuning_vs_direct_accuracy.png)
+![Finetuning vs Direct Training: Accuracy and LLC](results/finetuning/finetuning_vs_direct_llc_vs_accuracy.png)
 
 Sequential finetuning on unrelated moduli demonstrates distinct learning dynamics, with faster convergence to high test accuracy compared to training from scratch.
+
+### Finetuning: LLC Trajectories Across All Stages
+
+![Finetuning LLC vs Accuracy](results/finetuning/finetuning_llc_vs_accuracy.png)
+
+LLC evolution across all five finetuning stages (mod-7, mod-11, mod-23, mod-49, mod-53) shows how model complexity changes as the network is sequentially adapted to different modular arithmetic tasks.
 
 ---
 
