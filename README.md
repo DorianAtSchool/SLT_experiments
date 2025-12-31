@@ -8,18 +8,18 @@ The rest of the repo contains other extra experiments (some work, some don't) re
 
 The long-term vision of the repo is to conduct novel experiments and form conclusive insights, however the short-term goal is simply to familiarize myself with developmental interpretability through novel but simple experiments.
 
-
 # Curriculum Learning, Finetuning, and LLC in Grokking
 
 The main experiment explores the impact of curriculum learning versus direct training on the grokking behavior and Local Learning Coefficient (LLC) in modular arithmetic tasks, using PyTorch and the devinterp library by Timaeus.
 
+It takes about 20 minutes to run the notebook on a 5090 RTX GPU.
 
 ## Overview
 - **Goal:** Compare three approaches—curriculum learning (progressively harder modular addition tasks), finetuning (sequential training on unrelated moduli), and direct training on the hardest task—analyzing LLC trajectories and grokking.
 - **Notebook:** All code and analysis are in `main_experiment/curriculum_grokking_llc.ipynb`.
 - **visuals** All visuals are in /results.
 - **Reference:** Based on the original grokking experiment from [devinterp](https://github.com/timaeus-research/devinterp/blob/main/examples/grokking.ipynb).
-- **Future Directions:** It is unclear whether curriculum learning or finetuning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning or finetuning encourages memorization vs. grokking, and further tune the conditions necessary for grokking.
+- **Future Directions:** It is still unclear whether curriculum learning or finetuning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning or finetuning encourages memorization vs. grokking, and further tune the conditions necessary for grokking.
 
 
 ## Experiment Design
