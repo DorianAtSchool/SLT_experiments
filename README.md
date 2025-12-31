@@ -78,7 +78,7 @@ The curriculum learning approach shows accelerated grokking compared to direct t
 
 ### Finetuning vs Direct Training
 
-![Finetuning vs Direct Training: Accuracy and LLC](results/finetuning/finetuning_vs_direct_llc_vs_accuracy.png)
+![Finetuning vs Direct Training: Accuracy and LLC](results/finetuning/finetuning_llc_vs_accuracy.png)
 
 Sequential finetuning on unrelated moduli demonstrates distinct learning dynamics, with faster convergence to high test accuracy compared to training from scratch.
 
