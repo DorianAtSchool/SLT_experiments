@@ -17,6 +17,7 @@ The main experiment explores the impact of curriculum learning versus direct tra
 ## Overview
 - **Goal:** Compare three approaches—curriculum learning (progressively harder modular addition tasks), finetuning (sequential training on unrelated moduli), and direct training on the hardest task—analyzing LLC trajectories and grokking.
 - **Notebook:** All code and analysis are in `main_experiment/curriculum_grokking_llc.ipynb`.
+- **visuals** All visuals are in /results.
 - **Reference:** Based on the original grokking experiment from [devinterp](https://github.com/timaeus-research/devinterp/blob/main/examples/grokking.ipynb).
 - **Future Directions:** It is unclear whether curriculum learning or finetuning improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training. Future, more specific experiments, will be done to verify whether curriculum learning or finetuning encourages memorization vs. grokking, and further tune the conditions necessary for grokking.
 
@@ -66,9 +67,10 @@ The main experiment explores the impact of curriculum learning versus direct tra
 
 
 ## Observations / Results
-It seems that both curriculum learning and fine-tuning can significantly decrease the number of steps to start grokking and  accelerate the rate of grokking, when applied to a final modulus task that a model is known to have the capacity to grokk on.However, grokking doesn't seem to ever take place for many numbers or when modifying seed and weight decay parameters in direct training, curriculum learning, or finetuning, and it is unclear whether either transfer approach improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training.
 
-- The notebook produces plots comparing curriculum, finetuning, and direct training in terms of accuracy, loss, and LLC.
+It seems that both curriculum learning and finetuning can significantly decrease the number of steps to start grokking and  accelerate the rate of grokking, when applied to a final modulus task that a model is known to have the capacity to grokk on. However, grokking doesn't seem to ever take place for many numbers and can be altered when modifying seed and weight decay parameters in direct training, curriculum learning, or finetuning, and it is unclear whether either transfer approach improves or worsens adaptability (either through memorization or grokking): when a previous model grokked, the subsequent models did not always show grokking, but when they did they (often) did so much quicker compared to direct training.
+
+- /results contains plots comparing curriculum, finetuning, and direct training in terms of accuracy, loss, and LLC.
 
 ## Files
 - `main_experiment/curriculum_grokking_llc.ipynb`: Main experiment notebook
