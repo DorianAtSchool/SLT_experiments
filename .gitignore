@@ -3,3 +3,4 @@ venv
 data
 devinterp/
 __pycache__
+external/
