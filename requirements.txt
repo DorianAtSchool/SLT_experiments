@@ -6,3 +6,4 @@ tqdm
 devinterp
 nbformat
 plotly
+scipy
