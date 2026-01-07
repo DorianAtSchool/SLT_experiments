@@ -275,10 +275,10 @@ Runtime: ~20 minutes on GPU (RTX 5090)
 
 ---
 
-# Repository Structure
+# Structure
 
 ```
-llc/
+SLT_experiments/
 ├── main_experiment/
 │   ├── true_curriculum_learning.ipynb      # True curriculum learning experiment
 │   ├── finetuning_grokking_llc.ipynb       # Finetuning experiment
@@ -293,10 +293,18 @@ llc/
 
 ---
 
+# Follow up questions
+
+- During finetuning, when a model groks on a new, more complicated task, does it show evidence of generalization on previous tasks?
+- Can we predict grokking from LLC trajectory during the first half of training?
+- How can we evaluate whether a model has learned the "correct" algorithm or a different algorithm that happens to work? What if there are multiple "solutions"?
+
+  Full list of questions is in FutureDirections.md
+
 # References
 
 - [devinterp GitHub](https://github.com/timaeus-research/devinterp) - Timaeus Research
 - Original grokking experiment: `devinterp/examples/grokking.ipynb`
 - Singular Learning Theory foundations
 - [Power et al. (2022)](https://arxiv.org/abs/2201.02177) - Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets
-
+- Claude Code + Opus 4.5 :)
