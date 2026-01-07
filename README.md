@@ -293,6 +293,14 @@ SLT_experiments/
 
 ---
 
+# Follow up questions
+
+- During finetuning, when a model groks on a new, more complicated task, does it show evidence of generalization on previous tasks?
+- Can we predict grokking from LLC trajectory during the first half of training?
+- How can we evaluate whether a model has learned the "correct" algorithm or a different algorithm that happens to work? What if there are multiple "solutions"?
+
+  Full list of questions is in FutureDirections.md
+
 # References
 
 - [devinterp GitHub](https://github.com/timaeus-research/devinterp) - Timaeus Research
