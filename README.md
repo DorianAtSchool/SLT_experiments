@@ -275,10 +275,10 @@ Runtime: ~20 minutes on GPU (RTX 5090)
 
 ---
 
-# Repository Structure
+# Structure
 
 ```
-llc/
+SLT_experiments/
 ├── main_experiment/
 │   ├── true_curriculum_learning.ipynb      # True curriculum learning experiment
 │   ├── finetuning_grokking_llc.ipynb       # Finetuning experiment
