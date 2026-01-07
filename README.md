@@ -299,4 +299,4 @@ llc/
 - Original grokking experiment: `devinterp/examples/grokking.ipynb`
 - Singular Learning Theory foundations
 - [Power et al. (2022)](https://arxiv.org/abs/2201.02177) - Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets
-
+- Claude Code + Opus 4.5 :)
