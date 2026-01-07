@@ -14,23 +14,20 @@ The long-term vision of the repo is to conduct novel experiments and form conclu
 
 This repo contains two main experiments exploring different training paradigms for modular arithmetic:
 
-1. **True Curriculum Learning** - Progressive difficulty with true subset property
+1. **Curriculum Learning** - Progressive difficulty with true subset property
 2. **Finetuning** - Sequential training on unrelated tasks
 
 Both experiments analyze grokking behavior and Local Learning Coefficient (LLC) trajectories using PyTorch and the devinterp library by Timaeus.
 
 ---
 
-# Experiment 1: True Curriculum Learning
+# Experiment 1: Curriculum Learning
 
 **Notebook:** `main_experiment/true_curriculum_learning.ipynb`
 **Results:** `results/true_curriculum/`
 **Detailed Analysis:** See `results/true_curriculum/README.md`
 
-## What is TRUE Curriculum Learning?
-
-Unlike traditional curriculum learning where each stage learns a different task (e.g., mod-8, mod-16, mod-32, mod-64), **true curriculum learning** maintains the same task throughout while progressively expanding the input space:
-
+## Curriculum Learning 
 - **Same task:** All stages compute `(a+b) % 64`
 - **Same vocabulary:** Fixed 64 tokens, no embedding resizing
 - **True subsets:** Stage 1 ⊂ Stage 2 ⊂ Stage 3 ⊂ Stage 4
@@ -69,7 +66,7 @@ The experiment reveals a sharp threshold for algorithmic learning:
 | 3 | **417** | **71.8%** | **Grokking begins!** |
 | 4 | 1638 | 98.9% | Full algorithm |
 
-**Insight:** ~400 training pairs is the critical mass needed for the model to transition from memorization to algorithmic learning of modular addition mod 64.
+**Insight:** ~400 training pairs may be the critical mass needed for the model to transition from memorization to algorithmic learning of modular addition mod 64.
 
 ### 3. Different Learning Trajectories
 
@@ -133,7 +130,7 @@ Side-by-side comparison showing both training approaches achieve high accuracy b
 ## Conclusions
 
 1. **Direct training outperforms curriculum learning** for this task (100% vs 98.9% test accuracy)
-2. **~400 training pairs** represents a critical threshold for algorithmic learning
+2. **~400 training pairs** represents a potential critical threshold for algorithmic learning for this task
 3. **Curriculum learning reveals capability building:** Shows clear progression from memorization → partial grokking → full algorithm
 4. **Multiple paths to similar solutions:** Different training procedures explore different regions of parameter space but converge to similar final performance
 5. **LLC is a reliable generalization metric:** Training-only LLC successfully predicts test performance
@@ -142,7 +139,7 @@ Side-by-side comparison showing both training approaches achieve high accuracy b
 
 Curriculum learning may be valuable for:
 - Understanding data requirements at each capability level
-- Interpretability (clear progression of learned capabilities)
+- Improved Interpretability (clear progression of learned capabilities)
 - Data-scarce regimes where full dataset isn't available
 
 Direct training is preferable when:
@@ -157,12 +154,11 @@ Direct training is preferable when:
 **Notebook:** `main_experiment/finetuning_grokking_llc.ipynb`
 **Results:** `results/finetuning/`
 
-## What is Finetuning (in this context)?
+## Finetuning (in this context)
 
 Unlike curriculum learning where each stage is a subset of the next, finetuning trains sequentially on **unrelated moduli** that do not contain each other:
 
-- Train on mod-7, then finetune on mod-11
-- Then finetune on mod-23, then mod-49, then mod-53
+- Train on mod-7, then finetune on mod-11, mod-23, mod-49, and finally mod-53
 - Each new task is different and does **not** contain the previous one
 - Tests how repeated adaptation to related but distinct tasks affects grokking
 
@@ -228,7 +224,7 @@ Overlaid LLC trajectories across all finetuning stages reveal patterns in how th
 | **Learning Pattern** | Stepwise LLC progression | Variable LLC patterns | Spike-and-collapse LLC |
 | **Final Performance** | 98.9% (worse) | Varies | 100% (best) |
 | **Training Complexity** | Multi-stage | Multi-stage | Simple |
-| **Interpretability** | High (clear progression) | Medium | Low |
+| **Interpretability** | Higher | Medium | Lower |
 | **Use Case** | Understanding capability building | Testing task adaptation | Maximum performance |
 
 ---
@@ -258,7 +254,7 @@ pip install -r requirements.txt
 cd main_experiment
 jupyter notebook true_curriculum_learning.ipynb
 ```
-Runtime: ~45-60 minutes on GPU
+Runtime: ~45-60 minutes on GPU (RTX 5090)
 
 ## Run Finetuning Experiment
 ```bash
@@ -292,7 +288,6 @@ llc/
 │   ├── true_curriculum/                     # True curriculum results & analysis
 │   ├── finetuning/                          # Finetuning results
 │   └── curriculum_learning/                 # Old curriculum (deprecated)
-├── devinterp/                               # devinterp library
 └── requirements.txt
 ```
 
@@ -305,8 +300,3 @@ llc/
 - Singular Learning Theory foundations
 - [Power et al. (2022)](https://arxiv.org/abs/2201.02177) - Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets
 
----
-
-# Contact
-
-For questions or contributions, see the devinterp repository or open an issue.
